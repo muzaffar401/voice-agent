@@ -43,8 +43,8 @@ const AudioChat = ({
       className={cn(
         `mb-1 me-1 [&_svg]:size-5`,
         isRecording
-          ? "mr-4 bg-red-100 w-full h-full absolute top-0 left-0 z-10 flex justify-end px-4 hover:bg-red-200"
-          : "mr-0 border-2 border-gray-100 hover:text-black hover:bg-gray-300 hover:border-gray-300"
+          ? "mr-4 bg-gradient-to-r from-red-500/20 to-pink-500/20 backdrop-blur-xl w-full h-full absolute top-0 left-0 z-10 flex justify-end px-4 hover:from-red-500/30 hover:to-pink-500/30 border-2 border-red-400/30 shadow-2xl"
+          : "mr-0 border-2 border-white/20 hover:text-white hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 hover:border-white/30 backdrop-blur-xl shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
       )}
       onClick={toggleRecording}
     >
@@ -52,11 +52,11 @@ const AudioChat = ({
         <div className="flex w-full justify-between items-center gap-4 h-full">
           <AudioPlayback
             playbackFrequencies={frequencies}
-            itemClassName="bg-red-400 w-[4px] sm:w-[6px]"
+            itemClassName="bg-gradient-to-t from-red-400 to-pink-500 w-[4px] sm:w-[6px] shadow-lg"
             className="gap-[3px] w-full"
             height={36}
           />
-          <Button variant="stop" size="iconSmall" asChild className="mr-2">
+          <Button variant="stop" size="iconSmall" asChild className="mr-2 bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 shadow-xl">
             <div className="!size-6 h-8 w-8 p-4">
               <ArrowUpIcon />
             </div>

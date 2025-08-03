@@ -20,10 +20,10 @@ export function AudioPlayback({
       {playbackFrequencies.map((frequency: number, index: number) => (
         <motion.div
           key={index}
-          className={cn("w-[4px] sm:w-[6px] rounded", itemClassName)}
+          className={cn("w-[4px] sm:w-[6px] rounded shadow-lg", itemClassName)}
           initial={{ height: 0 }}
           animate={{ height: `${frequency * height}px` }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.2, ease: "easeOut", type: "spring", stiffness: 300, damping: 20 }}
         />
       ))}
     </div>

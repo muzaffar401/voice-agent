@@ -29,7 +29,7 @@ export function FunctionCallMessage({ message }: FunctionCallMessageProps) {
       <div>
         <div className="flex flex-col text-sm rounded-[16px]">
           <div className="font-semibold p-3 pl-0 text-gray-300 rounded-b-none flex gap-2">
-            <div className="flex gap-2 items-center text-blue-500 ml-[-8px] fill-blue-500">
+            <div className="flex gap-2 items-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent ml-[-8px]">
               <FunctionsIcon width={16} height={16} />
               <div className="text-sm font-medium">
                 {message.status === "completed"
@@ -39,11 +39,11 @@ export function FunctionCallMessage({ message }: FunctionCallMessageProps) {
             </div>
           </div>
 
-          <div className="bg-gray-800 rounded-xl py-2 ml-4 mt-2">
+          <div className="bg-gradient-to-r from-gray-800/80 to-gray-700/80 backdrop-blur-xl border border-white/10 rounded-xl py-2 ml-4 mt-2 shadow-2xl">
             <div className="max-h-96 overflow-y-scroll text-xs border-b mx-6 p-2">
               <SyntaxHighlighter
                 customStyle={{
-                  backgroundColor: "#1f2937",
+                  backgroundColor: "transparent",
                   padding: "8px",
                   paddingLeft: "0px",
                   marginTop: 0,
@@ -59,7 +59,7 @@ export function FunctionCallMessage({ message }: FunctionCallMessageProps) {
               {output ? (
                 <SyntaxHighlighter
                   customStyle={{
-                    backgroundColor: "#1f2937",
+                    backgroundColor: "transparent",
                     padding: "8px",
                     paddingLeft: "0px",
                     marginTop: 0,

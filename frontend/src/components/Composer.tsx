@@ -29,14 +29,14 @@ export function Composer({
 
   return (
     <div className="flex flex-row relative px-5 py-6 w-full max-w-2xl">
-      <div className="flex flex-row gap-2 w-full relative border-2 border-gray-600 rounded-[32px] focus:outline-none pl-6 pr-1 bg-gray-800">
+      <div className="flex flex-row gap-2 w-full relative border-2 border-white/20 rounded-[32px] focus:outline-none pl-6 pr-1 bg-gradient-to-r from-gray-800/80 to-gray-700/80 backdrop-blur-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:border-white/30">
         <textarea
           ref={textareaRef}
           value={prompt}
           rows={1}
           onChange={(e) => setPrompt(e.target.value)}
           placeholder="Ask a question"
-          className="py-3 flex-grow resize-none overflow-hidden focus:outline-none bg-gray-800 text-white placeholder-gray-400"
+          className="py-3 flex-grow resize-none overflow-hidden focus:outline-none bg-transparent text-white placeholder-gray-300/70"
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();

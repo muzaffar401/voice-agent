@@ -11,7 +11,7 @@ const CustomLink = ({ href, children, ...props }: CustomLinkProps) => (
   <a
     href={href}
     {...props}
-    className="bg-gray-600 rounded-full py-1 px-2 text-sm font-medium hover:text-black hover:bg-white text-white"
+    className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-full py-1 px-2 text-sm font-medium hover:from-blue-600 hover:to-purple-600 text-white shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
   >
     {children}
   </a>
@@ -31,8 +31,8 @@ export function TextMessage({ text, isUser }: TextMessageProps) {
     >
       <div
         className={clsx("rounded-[20px]", {
-          "px-4 max-w-[90%] ml-4 text-gray-900 bg-gray-300": isUser, 
-          "px-4 max-w-[90%] mr-4 text-white bg-gray-700": !isUser, 
+          "px-4 max-w-[90%] ml-4 text-gray-900 bg-gradient-to-r from-white to-gray-100 shadow-xl hover:shadow-blue-500/20 transition-all duration-300": isUser, 
+          "px-4 max-w-[90%] mr-4 text-white bg-gradient-to-r from-gray-700/80 to-gray-600/80 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-purple-500/20 transition-all duration-300": !isUser, 
         })}
       >
         <ReactMarkdown components={{ a: CustomLink }}>{text}</ReactMarkdown>

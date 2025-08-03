@@ -23,14 +23,17 @@ export function Header({
   const showAudioPlayback = playbackFrequencies.length === 5;
 
   return (
-    <div className="flex flex-row gap-2 w-full relative justify-between items-center py-4 px-4 bg-gray-900 text-white border-b border-gray-700">
+    <div className="flex flex-row gap-2 w-full relative justify-between items-center py-4 px-4 bg-gradient-to-r from-gray-900/80 via-purple-900/20 to-gray-900/80 backdrop-blur-xl text-white border-b border-white/10 shadow-2xl">
       <div className="flex flex-row gap-2 items-center px-5">
-        <Image src="/logo.svg" alt="OpenAI Logo" width={24} height={24} className="invert" />
+        <div className="relative">
+          <Image src="/logo.svg" alt="OpenAI Logo" width={24} height={24} className="invert drop-shadow-lg" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-lg opacity-30 animate-pulse"></div>
+        </div>
       </div>
       {agentName && (
         <div
           className={clsx(
-            "flex text-sm font-semibold border-2 border-gray-600 rounded-full py-3 items-center overflow-hidden bg-gray-800 text-white"
+            "flex text-sm font-semibold border-2 border-white/20 rounded-full py-3 items-center overflow-hidden bg-gradient-to-r from-gray-800/80 to-gray-700/80 backdrop-blur-xl text-white shadow-2xl hover:shadow-purple-500/20 transition-all duration-300"
           )}
         >
           <div className="ml-6 mr-4">
@@ -51,7 +54,7 @@ export function Header({
                 >
                   <AudioPlayback
                     playbackFrequencies={playbackFrequencies}
-                    itemClassName="bg-white"
+                    itemClassName="bg-gradient-to-t from-blue-400 to-purple-500 shadow-lg"
                     height={24}
                   />
                 </motion.div>
@@ -103,6 +106,7 @@ export function Header({
                     variant="primary"
                     size="iconTiny"
                     onClick={stopPlaying}
+                    className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 shadow-lg"
                   >
                     <PauseIcon />
                   </Button>
@@ -118,6 +122,7 @@ export function Header({
           onClick={resetConversation}
           aria-label="Start new conversation"
           size="icon"
+          className="bg-gradient-to-r from-gray-700/80 to-gray-600/80 backdrop-blur-xl border border-white/10 hover:from-gray-600/80 hover:to-gray-500/80 shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
         >
           <WriteIcon width={24} height={24} />
         </Button>

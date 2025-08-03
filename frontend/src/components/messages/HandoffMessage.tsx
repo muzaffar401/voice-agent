@@ -20,7 +20,7 @@ export function HandoffMessage({ message }: HandoffMessageProps) {
       <div>
         <div className="flex flex-col text-sm rounded-[16px]">
           <div className="font-semibold p-3 pl-0 text-gray-300 rounded-b-none flex gap-2">
-            <div className="flex gap-2 items-center text-blue-500 ml-[-8px]">
+            <div className="flex gap-2 items-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent ml-[-8px]">
               <ShuffleIcon width={16} height={16} />
               <div className="text-sm font-medium">
                 {message.status === "completed"
