@@ -23,14 +23,14 @@ export function Header({
   const showAudioPlayback = playbackFrequencies.length === 5;
 
   return (
-    <div className="flex flex-row gap-2 w-full relative justify-between items-center py-4 px-4 bg-white text-black border-b border-gray-100 dark:bg-gray-900 dark:text-white dark:border-gray-800">
+    <div className="flex flex-row gap-2 w-full relative justify-between items-center py-4 px-4 bg-gray-900 text-white border-b border-gray-700">
       <div className="flex flex-row gap-2 items-center px-5">
-        <Image src="/logo.svg" alt="OpenAI Logo" width={24} height={24} className="dark:invert" />
+        <Image src="/logo.svg" alt="OpenAI Logo" width={24} height={24} className="invert" />
       </div>
       {agentName && (
         <div
           className={clsx(
-            "flex text-sm font-semibold border-2 border-gray-100 rounded-full py-3 items-center overflow-hidden dark:border-gray-700 bg-white dark:bg-gray-800 dark:text-white"
+            "flex text-sm font-semibold border-2 border-gray-600 rounded-full py-3 items-center overflow-hidden bg-gray-800 text-white"
           )}
         >
           <div className="ml-6 mr-4">
@@ -51,7 +51,7 @@ export function Header({
                 >
                   <AudioPlayback
                     playbackFrequencies={playbackFrequencies}
-                    itemClassName="bg-black"
+                    itemClassName="bg-white"
                     height={24}
                   />
                 </motion.div>
